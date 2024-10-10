@@ -39,6 +39,27 @@
    float: left;
    border: 4px solid lightblue;
   }
+      .headers {
+    height:65px; 
+    width: 450px; 
+    background-color:lightblue; 
+    float: center; 
+    padding:10px; 
+    margin:20px;
+    text-align:centre; 
+    font-size:20px;
+  }
+  .app {
+    height:300px;
+    width: 450px; 
+    background-color:lightgreen; 
+    float: center; 
+    padding:10px; 
+    margin:20px;
+  }
+  input[type="button"] {
+   background-color: pink;
+  }
  </style>
 </head>
 
@@ -75,5 +96,34 @@
   Color: Green<br/>
   Value: Over $10 million
  </div>
+    <div class="headers">
+  <img src="image/VolkovLogo.jpg" style="float: left; height:70px;"> 
+  <p>To-Do List App (Add & Remove Item)</p>
+ </div>
+
+ <div class="app">
+  <p style="font-size:16px; font-style:bold;"> You Can Add And Remove An Item</p>
+  <p style="font-size:14px;"> - Click the button to add, click the item to remove - </p>
+  <input type="text" id="box" value="Type here to add task"/>
+  <br/>
+  <input type="button" value="Add button" onclick="add();"/>
+  <br/>
+   <div id="list"></div>
+ </div>
+     <title>To-Do List App</title>
+
+ <script>
+  function add() {
+   var n = document.createElement("div");
+   n.innerHTML = document.getElementById("box").value;
+   n.onclick = remove;
+   document.getElementById("list").appendChild(n);
+  }
+
+  function remove() {
+   document.getElementById("list").removeChild(this);
+  }  
+ </script>
+
 </body>
 </html>
